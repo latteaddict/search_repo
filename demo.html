@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Demo Page</title>
+	<meta name="description" content=" " />
+	<link href="https://www.ancestrycdn.com/ui/1.0.0/css/core.css" rel="stylesheet" />
+</head>
+<body>
+
+	<div id="HeaderRegion"></div>
+
+	<header class="pageHeader bgDark bgColor1 bgTexture1">
+		<h1 class="pageTitle">Prototype Me</h1>
+	</header>
+	<div class="page pagePadded pageWidth1">
+		<div class="ancGrid">
+			<div class="ancCol w66">
+				<section class="con">
+					<header class="conHeader">
+						<h2 class="conTitle">Main Container</h2>
+					</header>
+					<div class="conBody">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, doloribus incidunt qui, doloremque alias, iusto nesciunt nulla corporis ullam vel, eos voluptate voluptatem quasi. Similique, omnis! Saepe unde, quae repudiandae.</p>
+						<p>Aliquam, aliquid, quae. Hic assumenda est enim eligendi, dicta, aliquam laboriosam maiores dolore cupiditate. Placeat vel nesciunt ea, harum laboriosam dignissimos officia asperiores nostrum beatae labore, veritatis cumque voluptatibus, esse.</p>
+					</div>
+				</section>
+			</div>
+			<div class="ancCol w33">
+				<aside class="conSecond">
+					<header class="conHeader">
+						<h2 class="conTitle">Secondary Title</h2>
+					</header>
+					<p>Content goes here...</p>
+				</aside>
+			</div>
+		</div>
+	</div>
+
+	<div id="FooterRegion"></div>
+
+<script src="https://www.ancestrycdn.com/ui-static/lib/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://www.ancestrycdn.com/ui/1.0.0/js/core.js"></script>
+<script src="https://c.mfcreative.com/lib/tgn/combo.ashx?x/lib/tgn/util/v1.1/ajaxmanager.js&x/lib/tgn/util/v1.1/resourcemanager.js"></script>
+<script>
+$(function() {
+	/* Header Footer */
+	AjaxManager.send({
+		url: 'http://navigation.ancestry.com/ajax/header/standard?loginUrl=a&logoutUrl=b&source=' + window.location.hostname + window.location.pathname
+	});
+	AjaxManager.send({
+		url: 'http://footer.ajax.ancestry.com'
+	});
+	/* Page Specific JS */
+
+});
+</script>
+</body>
+</html>
