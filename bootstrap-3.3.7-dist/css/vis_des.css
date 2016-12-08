@@ -6,15 +6,18 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
 body {
-background-color:rgba(222, 220, 214, 1);
+background-image: url("../img/subtle_grunge.png");
+/* background-color:rgba(222, 220, 214, 1); */
 padding: 50px;
 
   }
 
 .innerwrap {
   background-color:rgba(255, 255, 255, 1);
-  width: 95%;
-  margin:0 auto;
+  max-width: 120em;
+  /* width: 100%;
+  margin: 0 auto; */
+
 }
 
 .heading {
@@ -22,22 +25,26 @@ padding: 50px;
 }
 
 .search_box {
-background-color:rgba(134, 202, 227, .3);
-padding:2em 0 1em 0;
+background-color:rgba(134, 202, 227, .25);
+/* background-color: rgba(96, 82, 126, .2); */
+padding:2em 0;
 
 
 }
 
-.single_search {
+.single_search {}
 
 
+.catalog {
+padding: 3em 5em 2em 5em;
+/* outline:10px solid red; */
 
 }
 
 
 .footer {
-/*   background-color:rgba(158, 154, 145, 1); */
-  background-color:rgba(190, 187, 179, 1);
+ background-color:rgba(158, 154, 145, .2);
+/*  background-color:rgba(190, 187, 179, 1); */
 
   padding: 2em;
 
