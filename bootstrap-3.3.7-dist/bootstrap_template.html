@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
 	<title>Ancestry Search Interface Blueprint</title>
 	<!-- Bootstrap -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/vis_des.css" rel="stylesheet">
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -15,18 +17,19 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
+
 <body>
-	<div class="container-fluid">
+
+	<div class="container-fluid innerwrap">
 		<div class="row">
 			<div class="col-md-12">
-				<nav class="navbar navbar-default navbar-inverse" role="navigation">
+				<nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
 					<div class="navbar-header">
 
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 								 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 							</button> <a class="navbar-brand" href="#">Ancestry logo</a>
 					</div>
-
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
 							<li class="active">
@@ -93,269 +96,190 @@
 							</li>
 						</ul>
 					</div>
-
 				</nav>
-				<h3 class="text-left text-warning">
-					</h3>
-				<h2>
-						Ancestry Family History Search
-					</h2>
 
-					<form class="form" role="search">
-						<div class="form-group">
-							<input type="text" class="form-control" />
+				<div class="row heading">
+					<div class="col-md-12 text-center">
+						<p>&nbsp;</p>
+						<h2>Ancestry makes exploring your genealogy easy.</h2>
+						<p>With billions of records at your fingertips and millions of fellow family history seekers to help, discovering your ancestors and their stories isn’t just easy, it’s a whole lot of fun. Ancestry online catalog contains XX million of records, XX
+							collections... statement that speaks to the value and richness of our collections.
+						</p>
+						<p>&nbsp;</p>
+
+					</div>
+
+				</div>
+
+				<div class="row search_box">
+					<div class="col-md-12">
+						<div class="col-md-8 col-md-offset-1 col-sm-offset-0">
+							<form class="form single_search" role="search">
+								<div class="form-group">
+									<input type="text" class="form-control" />
+								</div>
 						</div>
-						<button type="submit" class="btn btn-default ">
-								Submit
+						<div class="col-md-2 col-md-pull-1">
+							<button type="submit" class="btn btn-success btn-block">
+								Search
 							</button>
-					</form>
+							</form>
+						</div>
 
 
+						<div class="col-md-1 col-md-pull-1">
+							<button type="submit" class="btn btn-link btn-block">
+						Reset Search
+					</button>
+						</div>
+					</div>
+					<div class="col-md-10 col-md-offset-1 col-sm-offset-0">
+						<div class="col-md-4 ">
+							<a href="#" class="btn btn-block btn-default" type="button">Search By Person</a>
+						</div>
+						<div class="col-md-4">
+							<a href="#" class="btn  btn-default btn-block" type="button">Search by Record/Collection</a>
+						</div>
+						<div class="col-md-4">
+							<a href="#" class="btn btn-default btn-block" type="button">Research/Browse/Maps/Recent Searches</a>
+						</div>
+					</div>
+					<p>&nbsp;</p>
+				</div>
 
 
 
 
 				<div class="row">
 					<div class="col-md-6">
-						<a href="#" class="btn btn-block btn-info" type="button">Button</a>
-					</div>
-					<div class="col-md-6">
-						<a href="#" class="btn btn-info btn-default btn-block" type="button">Button</a>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4">
-						<div class="thumbnail">
-							<img alt="Bootstrap Thumbnail First" src="http://lorempixel.com/output/people-q-c-600-200-1.jpg" />
-							<div class="caption">
-								<h3>
-										Thumbnail label
-									</h3>
-								<p>
-									Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-								</p>
-								<p>
-									<a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
-								</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="thumbnail">
-							<img alt="Bootstrap Thumbnail Second" src="http://lorempixel.com/output/city-q-c-600-200-1.jpg" />
-							<div class="caption">
-								<h3>
-										Thumbnail label
-									</h3>
-								<p>
-									Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-								</p>
-								<p>
-									<a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
-								</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="thumbnail">
-							<img alt="Bootstrap Thumbnail Third" src="http://lorempixel.com/output/sports-q-c-600-200-1.jpg" />
-							<div class="caption">
-								<h3>
-										Thumbnail label
-									</h3>
-								<p>
-									Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-								</p>
-								<p>
-									<a class="btn btn-primary" href="#">Action</a> <a class="btn" href="#">Action</a>
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="media well">
-					<a href="#" class="pull-left"><img alt="Bootstrap Media Preview" src="http://lorempixel.com/64/64/" class="media-object" /></a>
-					<div class="media-body">
-						<h4 class="media-heading">
-								Nested media heading
-							</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-						<div class="media">
-							<a href="#" class="pull-left"><img alt="Bootstrap Media Another Preview" src="http://lorempixel.com/64/64/" class="media-object" /></a>
+						<div class="media well">
+							<a href="#" class="pull-left"><img alt="Bootstrap Media Preview" src="http://lorempixel.com/65/65/abstract" class="media-object" /></a>
+
 							<div class="media-body">
 								<h4 class="media-heading">
-										Nested media heading
-									</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+									<a href="#" class="">Census and Voter Lists</a>
+							</h4>These records often include details to help pinpoint someone's location at a particular point in time. While the census records vary from place to place, and year to year, you can find information like names of other household members, ages, birthplaces,
+								residence, occupation, immigration and citizenship details, marriage information, military service and more.
 							</div>
 						</div>
+					</div>
+
+					<div class="col-md-6">
+
+						<div class="media well">
+							<a href="#" class="pull-left"><img alt="Bootstrap Media Preview" src="http://lorempixel.com/65/65/people" class="media-object" /></a>
+							<div class="media-body">
+								<h4 class="media-heading">
+								<a href="#" class="">Birth, Marriage and Death Collections</a>
+							</h4>These records, collectively known as vital records, can provide details about important milestones in your ancestors’ lives. They include information like the event date and place, parents’ names, occupation and residence. The cause of death is
+								also included in most death records.
+
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="media well">
+							<a href="#" class="pull-left"><img alt="Bootstrap Media Preview" src="http://lorempixel.com/65/65/nature" class="media-object" /></a>
+
+							<div class="media-body ">
+								<h4 class="media-heading">
+												<a href="#" class="">Immigration and Travel</a>
+											</h4> The records in this collection include passenger arrival records, naturalization records, border crossings, emigration records, passports, convict transportation records. The collection includes immigration records from the U.S. and several other
+								countries from around the world.
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+
+						<div class="media well">
+							<a href="#" class="pull-left"><img alt="Bootstrap Media Preview" src="http://lorempixel.com/65/65/people" class="media-object" /></a>
+							<div class="media-body">
+								<h4 class="media-heading">
+														<a href="#" class="">Military</a>
+													</h4>Military records are wonderful sources that provide unique facts and insights into the lives of men and women who have served in the armed forces. The types of records you’ll find in this category include draft records, service records, pension
+								records, bounty land records, claim records, and military histories.
+
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+
+						<div class="media well">
+							<a href="#" class="pull-left"><img alt="Bootstrap Media Preview" src="http://lorempixel.com/65/65/city" class="media-object" /></a>
+							<div class="media-body">
+								<h4 class="media-heading">
+																<a href="#" class="">Schools, Directories and Church Histories</a>
+															</h4>These records are helpful in placing your ancestor in a specific location in a particular year. Other collections in this category include church histories, church records, alumni lists, yearbooks, professional directories, and phone books.
+							</div>
+						</div>
+					</div>
+
+
+					<div class="col-md-6">
+
+						<div class="media well">
+							<a href="#" class="pull-left"><img alt="Bootstrap Media Preview" src="http://lorempixel.com/65/65/business" class="media-object" /></a>
+							<div class="media-body">
+								<h4 class="media-heading">
+																		<a href="#" class="">Tax, Criminal, Land and Wills</a>
+																	</h4>Court, land, wills, and financial records can be incredibly rich in detail due to the fact that family details and witnesses were often used to identify people. In this category, you’ll find indexes as well as some collections of actual records.
+
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="media well">
+							<a href="#" class="pull-left"><img alt="Bootstrap Media Preview" src="http://lorempixel.com/65/65/business" class="media-object" /></a>
+							<div class="media-body">
+								<h4 class="media-heading">
+																				<a href="#" class="">Reference, Dictionaries and Almanacs</a>
+																			</h4>Court, land, wills, and financial records can be incredibly rich in detail due to the fact that family details and witnesses were often used to identify people. In this category, you’ll find indexes as well as some collections of actual records.
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="media well">
+							<a href="#" class="pull-left"><img alt="Bootstrap Media Preview" src="http://lorempixel.com/65/65/nature" class="media-object" /></a>
+							<div class="media-body">
+								<h4 class="media-heading">
+																						<a href="#" class="">Public Member Trees</a>
+																					</h4>This database contains family trees submitted to Ancestry by users who have indicated that their tree can be viewed by all Ancestry subscribers. These trees can change over time as users edit, remove, or otherwise modify the data in their trees.
+								You can contact the owner of the tree to get more information.
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+
+				<div class="row footer">
+					<div class="col-md-12">
+						<ul class="list-inline">
+							<li>
+								<a href="#" class="">Support Center</a>
+							</li>
+							<li>
+								<a href="#" class="">Ancestry Blog</a>
+							</li>
+							<li>
+								<a href="#" class="">Site Map</a>
+							</li>
+							<li>
+								<a href="#" class="">Gift Memberships</a>
+							</li>
+							<li>
+								<a href="#" class="">Careers</a>
+							</li>
+						</ul>
 					</div>
 				</div>
-				<table class="table table-hover">
-					<thead>
-						<tr>
-							<th>
-								#
-							</th>
-							<th>
-								Product
-							</th>
-							<th>
-								Payment Taken
-							</th>
-							<th>
-								Status
-							</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>
-								1
-							</td>
-							<td>
-								TB - Monthly
-							</td>
-							<td>
-								01/04/2012
-							</td>
-							<td>
-								Default
-							</td>
-						</tr>
-						<tr class="active">
-							<td>
-								1
-							</td>
-							<td>
-								TB - Monthly
-							</td>
-							<td>
-								01/04/2012
-							</td>
-							<td>
-								Approved
-							</td>
-						</tr>
-						<tr class="success">
-							<td>
-								2
-							</td>
-							<td>
-								TB - Monthly
-							</td>
-							<td>
-								02/04/2012
-							</td>
-							<td>
-								Declined
-							</td>
-						</tr>
-						<tr class="warning">
-							<td>
-								3
-							</td>
-							<td>
-								TB - Monthly
-							</td>
-							<td>
-								03/04/2012
-							</td>
-							<td>
-								Pending
-							</td>
-						</tr>
-						<tr class="danger">
-							<td>
-								4
-							</td>
-							<td>
-								TB - Monthly
-							</td>
-							<td>
-								04/04/2012
-							</td>
-							<td>
-								Call in to confirm
-							</td>
-						</tr>
-					</tbody>
-				</table>
-				<div class="panel-group" id="panel-955880">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-955880" href="#panel-element-596034">Collection Information</a>
-						</div>
-						<div id="panel-element-596034" class="panel-collapse collapse">
-							<div class="panel-body">
-								<div id="moreInfoText" class="widgtContnt">
-									<p>
-										In a few of the vital records collections on Ancestry, you will find the indexes that link to images of actual records. In other cases, there are indexes that contain information that will help you request the record. If you find your ancestor in an index,
-										be sure to click on the database title and look at the description to learn how to request the actual record. The full record will typically include details not found in the index. We also maintain a list of links to state vital records agencies
-										in the Ancestry Library.
-									</p>
-									<p class="liLearnDomain">
-										<a href="http://learn.ancestry.com/LearnMore/Article.aspx?id=6510">Find more information</a>.
-									</p>
-								</div>
-								<p id="shortDescription">
-									These records, collectively known as vital records, can provide details about important milestones in your ancestors’ lives. They include information like the event date and place, parents’ names, occupation and residence. The cause of death is also included
-									in most death records.
-								</p>
-								<p id="longDescription">
-									Vital records are a cornerstone of family history research because they were typically created at or near the time of the event, making the record more likely to be accurate. This category includes indexes that can help you request copies from vital records
-									keepers, and in some cases the images of actual records.
-								</p>
-							</div>
-						</div>
-					</div>
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-955880" href="#panel-element-266150">Search Tips</a>
-						</div>
-						<div id="panel-element-266150" class="panel-collapse collapse">
-							<div class="panel-body">
-								<ul>
-									<li>
-										To narrow your search, estimate birth dates using information found in the <a href="http://search.ancestry.com/search/default.aspx?cat=35">Census</a>and in <a href="http://search.ancestry.com/search/">other records</a>.
-									</li>
-									<li>
-										Narrow your search for marriage records by looking at the age and birthplace of the first child. This information can also be found in <a href="http://search.ancestry.com/search/default.aspx?cat=35">Census Records</a>. Start your search a year
-										or two prior to the child’s birth and gradually widen your search back (and forward) in time until you locate the record.
-									</li>
-									<li>
-										Track your ancestor year to year in <a href="http://search.ancestry.com/Browse/list.aspx?dbid=1540">City Directories</a> to help zero in on death dates and places. Husbands who predecease their wives will typically stop being listed after death
-										and you’ll often find the wife in his place, listed as "widow."
-									</li>
-									<li>
-										Court records like wills can help you estimate death dates.
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				<ul class="pagination">
-					<li>
-						<a href="#">Prev</a>
-					</li>
-					<li>
-						<a href="#">1</a>
-					</li>
-					<li>
-						<a href="#">2</a>
-					</li>
-					<li>
-						<a href="#">3</a>
-					</li>
-					<li>
-						<a href="#">4</a>
-					</li>
-					<li>
-						<a href="#">5</a>
-					</li>
-					<li>
-						<a href="#">Next</a>
-					</li>
-				</ul>
+
 			</div>
 		</div>
 	</div>

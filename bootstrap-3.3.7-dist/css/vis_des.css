@@ -4,3 +4,41 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
+body {
+background-color:rgba(222, 220, 214, 1);
+padding: 50px;
+
+  }
+
+.innerwrap {
+  background-color:rgba(255, 255, 255, 1);
+  width: 95%;
+  margin:0 auto;
+}
+
+.heading {
+
+}
+
+.search_box {
+background-color:rgba(134, 202, 227, .3);
+padding:2em 0 1em 0;
+
+
+}
+
+.single_search {
+
+
+
+}
+
+
+.footer {
+/*   background-color:rgba(158, 154, 145, 1); */
+  background-color:rgba(190, 187, 179, 1);
+
+  padding: 2em;
+
+}
