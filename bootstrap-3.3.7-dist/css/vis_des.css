@@ -27,9 +27,13 @@ padding: 50px;
 .search_box {
 background-color:rgba(134, 202, 227, .25);
 /* background-color: rgba(96, 82, 126, .2); */
-padding:2em 0;
+padding:1em 0 1em 0;
 
+}
 
+.search_box p {
+display: block;
+padding:0 0 0 1.2em;
 }
 
 .single_search {}
