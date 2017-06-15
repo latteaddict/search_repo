@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Demo Page</title>
+	<meta name="description" content=" " />
+	<link href="https://www.ancestrycdn.com/ui/1.2.3/css/core.css" rel="stylesheet" />
+</head>
+
+<body>
+	<div id="HeaderRegion"></div>
+	<header class="pageHeader ">
+
+		<nav class="pageCrumbs ancCol w100">
+			<a class="pageCrumb" href="/">Home</a><span class="pageCrumb">&gt;</span><a class="pageCrumb" href="/search">Search</a>
+			<span class="pageCrumb">&gt;</span><strong class="pageCrumb">Recent Activity</strong>
+		</nav>
+		<h1 class="pageTitle">Recent Activity</h1>
+	</header>
+	<div class="page pagePadded pageWidth2">
+
+
+
+		<div class="ancCol w25">
+			<section class="con">
+				<div class="conBody">
+					<div class="tabs tabsVertical tabs480" data-tab="vertical-tabs-480" role="tablist">
+						<a href="/search/recent" class="tab tabActive active" role="tab" type="button" id="vertical-tabs-480Tab0" aria-controls="vertical-tabs-480TabPanel0" aria-selected="true" aria-expanded="true">All Recent</a>
+						<a href="/search/recent/records" class="tab icon iconNote" role="tab" type="button" id="vertical-tabs-480Tab1" aria-controls="vertical-tabs-480TabPanel1" aria-selected="false" aria-expanded="false">Viewed Records</a>
+						<a href="/search/recent/searches" class="tab icon iconSearch" role="tab" type="button" id="vertical-tabs-480Tab2" aria-controls="vertical-tabs-480TabPanel2" aria-selected="false" aria-expanded="false">Recent Searches</a>
+						<a href="/search/recent/collections" class="tab icon iconStories" role="tab" type="button" id="vertical-tabs-480Tab3" aria-controls="vertical-tabs-480TabPanel3" aria-selected="false" aria-expanded="false">Viewed Collections</a>
+					</div>
+				</div>
+			</section>
+			<p>&nbsp;</p>
+		</div>
+
+		<div class="ancCol w75">
+			<section class="con">
+				<header class="conHeader">
+					<h2 class="conTitle">No recent activity.</h2>
+
+				</header>
+
+
+
+				<div class="conBody">
+
+				<p>Your viewed records, recent searches, and viewed collections will be visible here. 
+</p>
+
+				<p><button class="ancBtn" type="button">Get started</button></p>
+
+	<!--
+				<p><button data-callout="<p>I am positioned to the <em>left</em> of the trigger.</p>" data-position="left"class="ancBtn" id="leftPositionSettingExample">Left-positioned callout</button>
+				</p>
+
+
+
+
+					<p>Here's what you will be able to find here in the future:</p>
+					<p>&nbsp;</p>
+
+					<div class="ancCol w33">
+								<figure class="standardsFigure">
+									<div class="card cardEmpty icon iconStories" tabindex="0" role="button" data-toggle-classes="cardOutline3 cardSelected">
+										<h5 class="cardSubtitle">Viewed Records</h5>
+										<div class="cardInfo"><small>content</small> </div>
+									</div>
+
+								</figure>
+							</div>
+
+
+
+					<div class="ancCol w33">
+						<div class="card cardEmpty" tabindex="0" role="button">
+							<h4 class="cardTitle">Recent Searches</h4>
+							<p>Text</p>
+						</div>
+					</div>
+
+
+
+					<div class="ancCol w33">
+						<div class="card cardEmpty" tabindex="0" role="button">
+							<h4 class="cardTitle">Viewed Collections</h4>
+							<p>Text</p>
+						</div>
+					</div>
+<p>&nbsp;</p>
+
+
+
+					<div class="ancCol w100">
+								<figure class="standardsFigure">
+									<div class="card cardEmpty icon iconStories" tabindex="0" role="button" data-toggle-classes="cardOutline3 cardSelected">
+										<h5 class="cardSubtitle">Viewed Record</h5>
+										<div class="cardInfo"><small>content</small> </div>
+									</div>
+								</figure>
+							</div>
+<p>&nbsp;</p>
+							<div class="ancCol w100">
+								<div class="card cardEmpty" tabindex="0" role="button">
+									<h4 class="cardTitle">Recent Search</h4>
+									<p>Text</p>
+								</div>
+							</div>
+<p>&nbsp;</p>
+							<div class="ancCol w100">
+								<div class="card cardEmpty" tabindex="0" role="button">
+									<h4 class="cardTitle">Viewed Collection</h4>
+									<p>Text</p>
+								</div>
+							</div>
+
+<p>&nbsp;</p>
+
+-->
+
+
+
+				</div>
+			</section>
+		</div>
+
+	</div>
+
+
+	<div id="FooterRegion"></div>
+
+	<script src="https://www.ancestrycdn.com/ui-static/lib/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://www.ancestrycdn.com/ui/1.2.3/js/core.js"></script>
+	<script src="https://c.mfcreative.com/lib/tgn/combo.ashx?x/lib/tgn/util/v1.1/ajaxmanager.js&x/lib/tgn/util/v1.1/resourcemanager.js"></script>
+	<script>
+		$(function() {
+			/* Header Footer */
+			AjaxManager.send({
+				url: 'http://navigation.ancestry.com/ajax/header/standard?loginUrl=a&logoutUrl=b&source=' + window.location.hostname + window.location.pathname
+			});
+			AjaxManager.send({
+				url: 'http://footer.ajax.ancestry.com'
+			});
+
+			/* Page Specific JS */
+
+			/* Beginning of MOdal JS */
+			$('#modalDefaultBtn').on('click', e => {
+				$('#modalDefault').modal({
+					$trigger: $('#modalDefaultBtn')
+				});
+			});
+
+			/* End of Modal JS */
+
+			/* Beginning of Step by step guidance JS */
+			const $trigger = $('#guidance-trigger-example2');
+			$trigger.on('click', () => {
+				$trigger.guidance({
+					steps: [{
+						content: '<p>For our first step we will point out a very nice button</p>',
+						heading: 'Nice Button!',
+						selector: '#example2'
+					}, {
+						content: '<p>Coding guidelines should answer all your questions about guidance</p>',
+						heading: 'Coding Guidelines',
+						selector: '#coding h2'
+					}, {
+						content: '<p>All the step settings are here. They can even be edited dynamically in a callback. Notice the pulse is set to a different selector</p>',
+						heading: 'Step Settings',
+						pulse: '#stepSettingName',
+						position: 'top',
+						selector: '#stepSettingsExample'
+					}, {
+						content: '<p>There are other examples of Guidance that may help you.</p>',
+						heading: 'Other Examples',
+						position: 'top',
+						selector: '#examples',
+						spotlight: '.conThird'
+					}]
+				});
+			});
+			/* Ends Step by step guidance JS */
+
+
+		});
+	</script>
+</body>
+
+</html>
