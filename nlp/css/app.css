@@ -1,0 +1,105 @@
+body {
+    background-color: #F8F7F3;
+}
+
+body>.navbar-default {
+    border: none;
+    background-color: transparent;
+    margin: 0;
+}
+
+ul.dropdown-menu>li.selected>a:before {
+    content: "\e013";
+    font-family: 'Glyphicons Halflings';
+    margin-left: -1em;
+}
+
+.panel-title {
+    height: 34px;
+    line-height: 34px;
+    vertical-align: middle;
+}
+
+.SearchResult>.row:not(:first-child):not(:last-child) {
+    padding: 2px 0;
+}
+
+.SearchResult>.row {
+    border-left: 3px solid transparent;
+}
+
+.SearchResult>.row:not(:first-child):hover {
+    border-left: 3px solid #F8F8E0;
+    background-color: #F0F0E0;
+}
+
+.SearchResult>.row>div:first-child {
+    font-weight: 700;
+}
+
+.SearchResult ol {
+    padding-left: 0;
+}
+
+form.SearchForm ul.list-group>li:first-child {
+    background-color: beige;
+}
+
+form.SearchForm input, form.SearchForm select {
+    padding: 0 0 0 2px;
+}
+
+form.SearchForm .row:not(:first-child) {
+    padding-top: 4px;
+}
+
+form.SearchForm .row>.col-sm-4:not(:first-child):not(:last-child) {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+form.SearchForm .row>.col-sm-4:first-child {
+    padding-right: 4px;
+}
+
+form.SearchForm .row>.col-sm-4:last-child {
+    padding-left: 4px;
+}
+
+form.SearchForm label>input[type="checkbox"] {
+    position: relative;
+    top: -1px;
+}
+
+.unused input {
+    text-decoration: line-through;
+    background-color: bisque;
+    color: darkred;
+}
+
+.highlight>b {
+    background-color: yellow;
+}
+
+
+/* For custom placeholders, just add/remove the classes below */
+
+.custom-placeholder::-webkit-input-placeholder {
+    color: #dedede;
+}
+
+FF 4-18 .custom-placeholder:-moz-placeholder {
+    color: #dedede;
+}
+
+FF 19+.custom-placeholder::-moz-placeholder {
+    color: #dedede;
+}
+
+IE 10+.custom-placeholder:-ms-input-placeholder {
+    color: #dedede;
+}
+
+#sliderContainer {
+    width: 100%;
+}
