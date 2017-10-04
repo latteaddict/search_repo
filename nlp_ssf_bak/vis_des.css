@@ -1,0 +1,21 @@
+
+body {
+/* background-image: url("img/subtle_grunge.png"); */
+/* background-color:rgba(222, 220, 214, 1); */
+  }
+
+.imgHeader {
+  background-color: transparent;
+  background-image: url(https://www.ancestrycdn.com/mars/landing/dna/homepage/us/dnalohp-hero-still-bkg-lrg2.jpg);
+  /* background-image:url("images/header2.jpg"); */
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+
+  }
+
+h1.pageTitle {
+padding-top:20vh;
+color: #fff;
+text-shadow: 0 0 2px rgba(0,0,0,0.4);
+}

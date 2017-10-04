@@ -8,6 +8,7 @@ var gender = "";
 var cWordNumber;
 var cWord;
 var totalWords;
+
 window.sls.bornMenuItem = '<div id="born" class="menuItem"><span class="itemTitle" shortTitle="born ~">born about</span> <span class="hintType">(year)</span></div>';
 window.sls.livedinMenuItem = '<div id="in" class="menuItem"><span class="itemTitle" shortTitle="in">lived in</span> <span class="hintType">(place)</span></div>';
 window.sls.fatherMenuItem = '<div id="father" class="stacBtn">father</div>';
@@ -28,6 +29,8 @@ Array.prototype.unique = function() {
     return a;
 };
 
+// google map key: AIzaSyDLuV_NJX8vJMIzf2DJ_n1UYo1J9RVKnp4
+
 
 function initialize() {
     var input = document.getElementById('searchTextField');
@@ -36,6 +39,7 @@ function initialize() {
     };
     autocomplete = new google.maps.places.Autocomplete(input, optionz);
     google.maps.event.addListener(autocomplete, 'place_changed', function() {
+        console.log("running maps autocomplete");
         var tempLabel = $("span#input span.sub:last").attr('label');
         var priorText = $("span#input span.sub:last").text();
         var tempText = $("input#searchTextField").val();
@@ -45,16 +49,15 @@ function initialize() {
         sls.tempString = "<span class='sub data' label='" + tempLabel + "'>" + tempText + "</span>";
         $("span#input").append(sls.tempString);
         scrubInput();
-        $("span#input").simulate('keydown', {
-            keyCode: $.ui.keyCode.SPACE
-        })
-        $("input#searchTextField").val("");
-        $("input#searchTextField").hide();
+        var e = $.Event("keydown", { keyCode: 32});
+        $("span#input").trigger(e);
+        $("input#searchTextField").val("").hide();
         $("div#optionsList").show();
         highlightFirst();
         updateList();
         placeCaretAtEnd();
         calculateStrength();
+        //console.log(sls.lookupPlaceCode(tempText));
     });
 }
 google.maps.event.addDomListener(window, 'load', initialize);
@@ -341,7 +344,7 @@ function completeItem(selectedItem) { //triggered when hitting enter or clicking
     placeCaretAtEnd();
     if (tempType == "in") {
         var tempX = $("span#input").width() + $("span#input").offset().left + 11;
-        var tempY = $("span#input").height() + $("span#input").offset().top - 11;
+        var tempY = $("span#input").height() + $("span#input").offset().top - 16;
         $("input#searchTextField").show().css('left', tempX + "px").css('top', tempY + "px").focus();
         if ($("style#temp").length == 0) {
             var tempStyle = '<style type="text/css" id="temp">.pac-item:first-of-type {background-color: #e5f077;}</style>';
@@ -363,6 +366,14 @@ function completeItem(selectedItem) { //triggered when hitting enter or clicking
 }
 
 function wrapLast(type, name, gender) {
+    var totalSpan = $("span#input").text();
+    $("span#input > span.sub").each(function(){
+        totalSpan = totalSpan.replace($(this).text(),"");
+    });
+    var leftover = totalSpan.trim();
+    if(leftover == ""){
+        return false;
+    }
     if (typeof type === "undefined") {
         type = "data";
     }
@@ -387,7 +398,7 @@ function wrapLast(type, name, gender) {
         tempText = "in";
     }
     if (tempText != "") {
-        console.log("tempText is blank");
+        //console.log("tempText is blank");
         var subSpans = $("span#input span.sub").detach();
         $("span#input").empty().append(subSpans).append('<span class="sub ' + type + relation + '" label="' + name + '"' + gender + '>' + tempText + '</span>');
         if (name != "firstname" && name != "fi" && name != "middlename" && name != "mi") {
@@ -475,7 +486,8 @@ function calculateStrength() {
                 break;
             case "in": //livedin location
                 //ny = 35; states = 50; regular city = 80
-                if (data.indexOf("USA") >= 0 || data.indexOf("United States")) {
+                if (data.indexOf("USA") >= 0 || data.indexOf("United States") >= 0) {
+                    console.log("us");
                     tempArray = data.split(",");
                     if ((tempArray.length - 1) == 2) {
                         var cityState = (tempArray[0] + "," + tempArray[1]).trim();
@@ -495,7 +507,7 @@ function calculateStrength() {
                 } else {
                     score = 50; //country or outside US
                 }
-                console.log("location score=" + score);
+                //console.log("location score=" + score);
                 break;
             case "father":
             case "mother":
@@ -553,7 +565,7 @@ function scrubInput() {
     });
     $("span#input span.sub:not(:last)").each(function(i) {
         $(this).text($(this).text().replace(/ named/ig, ""));
-        $(this).text($(this).text().replace(/United States/ig, "USA"));
+        //$(this).text($(this).text().replace(/United States/ig, "USA"));
     });
     var subSpans = $("span#input span.sub").detach();
     $("span#input").empty().append(subSpans);
@@ -906,6 +918,7 @@ $(document).ready(function() {
         sls.childCount = 0;
         $("span.sub.data").each(function() {
             var word = $(this).attr("label");
+            var text = $(this).text();
             var data = encodeURIComponent($(this).text());
             //console.log("word="+word);
             switch (word) {
@@ -913,7 +926,11 @@ $(document).ready(function() {
                     sls.searchArgs += "&msbdy=" + data;
                     break;
                 case "in": //livedin location
-                    sls.searchArgs += "&mswpn__ftp=" + data;
+                    var placecode = sls.lookupPlaceCode(text);
+                    if(placecode !== 0){
+                        sls.searchArgs += "&msypn=" + placecode;
+                    }
+                    sls.searchArgs += "&msypn__ftp=" + data;
                     break;
                 case "father":
                     sls.searchArgs += "&msfng=" + data;
@@ -1050,13 +1067,26 @@ $(document).ready(function() {
         placeCaretAtEnd();
     });
 
+// On hitting Enter select highlighting item in typeahead list
     $("input#searchTextField").focusin(function() {
         $(document).keypress(function(e) {
             if (e.which == 13) {
                 e.preventDefault();
                 if (sls.disableLocEnter == false) {
+                    var place = $("div.pac-item:eq(0) > span.pac-item-query");
+                    if(place.next().text() == ""){
+                        var placeText = place.text();
+                    } else {
+                        var placeText = place.text()+", "+place.next().text();
+                    }
+                    //console.log("placetext="+placeText);
                     $("span#input span.sub:last").remove();
-                    $("input#searchTextField").trigger('focus');
+                    $("span#input").append('<span class="sub data" label="in">'+placeText+'</span>&nbsp;');
+                    scrubInput();
+                    placeCaretAtEnd();
+                    calculateStrength();
+                    //console.log(sls.lookupPlaceCode(placeText));
+                    /*
                     $("input#searchTextField").simulate('keydown', {
                         keyCode: $.ui.keyCode.DOWN
                     }).simulate('keydown', {
@@ -1064,8 +1094,9 @@ $(document).ready(function() {
                     }).simulate('keydown', {
                         keyCode: $.ui.keyCode.ENTER
                     });
+                    */
                 }
-            } else if (e.which == 0) {
+            } /*else if (e.which == 0) { ///?? Dunno why this is here
                 e.preventDefault();
                 if (sls.disableLocEnter == false) {
                     $("input#searchTextField").trigger('focus');
@@ -1077,19 +1108,24 @@ $(document).ready(function() {
                         keyCode: $.ui.keyCode.ENTER
                     });
                 }
-            }
+            } */
         });
     });
 
+//If up or down key set disable hitting enter code above, but pass through down arrow
     $("input#searchTextField").keydown(function(e) {
-        console.log("key=" + e.which);
-        if (e.which == 38 || e.which == 40) {
+        var code = e.keyCode || e.which;
+        if (code == 38 || code == 40) {
             if (sls.disableLocEnter == false) {
+                console.log("passing through down arrow");
                 sls.disableLocEnter = true;
                 if (e.which == 40) {
+                    var ekey = $.Event("keydown", { keyCode: 40});
+                    $("input#searchTextField").trigger(ekey);
+                    /*
                     $("input#searchTextField").simulate('keydown', {
                         keyCode: $.ui.keyCode.DOWN
-                    });
+                    });*/
                 }
                 $("style#temp").remove();
             }

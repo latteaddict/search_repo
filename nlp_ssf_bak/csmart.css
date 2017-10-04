@@ -13,10 +13,10 @@ div.page {
     display: table-cell;
     width: 100%;
     width: 100vw;
-    height: 100vh;
+    height: 40vh;
     vertical-align: middle;
     text-align: center;
-    background-color: #efefef;
+    /*  background-color: #efefef; */
 }
 
 div.searchField {
@@ -39,6 +39,7 @@ div.strength {
     font-size: 12px;
     color: #d4d4d4;
     margin-bottom: 8px;
+
 }
 
 div.stacBtn {
@@ -57,7 +58,7 @@ div.stacBtn.hover {
 
 #inputOuter, #inputOuter2 {
     outline: 0;
-    border: 1px #999999 solid;
+    /* border: 1px #999999 solid; */
     border-radius: 4px;
     white-space: nowrap;
     overflow: visible;
@@ -68,9 +69,9 @@ div.stacBtn.hover {
 }
 
 #searchBtn {
-    background: #afbc22 url("images/magglass.png") no-repeat center;
+  background: #afbc22 url("images/magglass.png") no-repeat center;
     width: 64px;
-    height: 41px;
+    height: 44px;
     display: inline-block;
     float: right;
     border-top-right-radius: 2px;
@@ -78,6 +79,7 @@ div.stacBtn.hover {
     cursor: pointer;
     margin-right: -70px;
     margin-left: -70px;
+
 }
 
 .btn {
@@ -108,8 +110,9 @@ input:focus {
 
 input#searchTextField {
     position: absolute;
-    z-index: 2;
     width: 200px;
+    z-index: 2;
+
 }
 
 div#tipText {
@@ -123,13 +126,13 @@ div.barBit {
     height: 14px;
     width: 6px;
     display: inline-block;
-    border: 1px solid #dddddd;
+    /* border: 1px solid #dddddd; */
     margin-right: -1px;
 }
 
 div.barBit.on {
     background-color: #d5ea00;
-    border: 1px solid #aaaaaa;
+    /* border: 1px solid #aaaaaa; */
     -webkit-transition: background 0.8s;
     -moz-transition: background 0.8s;
     -o-transition: background 0.8s;
@@ -164,11 +167,11 @@ span.sub.label {
 
 .menu {
     font-size: 16px;
-    padding: 4px 0px 8px 0px;
+    /* padding: 4px 0px 8px 0px; */
     border: 1px silver solid;
     border-radius: 5px;
     background-color: #FFF;
-    box-shadow: 1px 2px 3px #000;
+    /* box-shadow: 1px 2px 3px #000; */
 }
 
 .menuItem {

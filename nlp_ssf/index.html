@@ -1,9 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
 	<!-- Begin Inspectlet Embed Code  -->
-	<!--	<script type="text/javascript" id="inspectletjs">
+ <!--	<script type="text/javascript" id="inspectletjs">
 		window.__insp = window.__insp || [];
 		__insp.push(['wid', 610674023]);
 		(function() {
@@ -30,18 +29,19 @@
 	<link href="https://www.ancestrycdn.com/ui/1.0.0/css/core.css" rel="stylesheet" />
 	<link href="vis_des.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="scripts/jquery-ui-1.8.16.custom.min.js"></script>
-	<script type="text/javascript" src="scripts/jquery.simulate.js"></script>
-	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+	<!--<script type="text/javascript" src="scripts/jquery-ui-1.8.16.custom.min.js"></script>
+	<script type="text/javascript" src="scripts/jquery.simulate.js"></script>-->
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLuV_NJX8vJMIzf2DJ_n1UYo1J9RVKnp4&libraries=places"></script>
 	<script type="text/javascript" src="cleanedGenderData.js"></script>
 	<script type="text/javascript" src="lastnames.js"></script>
+	<script type="text/javascript" src="placecodelookup.js"></script>
 	<script type="text/javascript" src="sform.js"></script>
 </head>
 
 <body>
 	<div id="HeaderRegion"></div>
 	<section class="imgHeader">
-		 <h1 class="pageTitle">Welcome to Ancestry</h1>
+		<h1 class="pageTitle">Search the Ancestry Vault</h1>
 		<!-- Dave's code from here -->
 		<div class="page">
 			<div class="strength"><span style="color: white; position: relative; top: -3px; left: -5px;">STRENGTH</span>
@@ -64,27 +64,18 @@
 				</div><span style="display:none;" id="strengthScore"></span></div>
 			<div class="searchField">
 				<div id="inputOuter">
-					<div id="searchBtn"></div><span id="input" spellcheck="false" contenteditable="true"><span class="tipText">What do you want to know?</span></span>
-					<!-- <button class="tab tabActive">Advanced Options</button>
-					<button id="searchBtn2" class="ancBtn" type="button">Search</button>
-				-->
+					<div id="searchBtn"></div><span id="input" spellcheck="false" contenteditable="true"><span class="tipText">Who are you looking for?</span></span>
 				</div>
 
 			</div>
-
-		<!--	<div class="">
-				<button class="tab tabActive">Advanced Options</button>
-			  <button id="searchBtn" class="ancBtn" type="button">Search</button>
-			</div>
-		-->
-			<!-- <div id="searching" style="display:none;"><img src="images/activity-sm-white.gif" width="16" height="16" alt="" />Searching...</div> -->
+			<div id="searching" style="display:none;" ><img src="images/activity-sm-white.gif" width="16" height="16" alt="" />Searching...</div>
 		</div>
 		<input id="searchTextField" type="text" placeholder="City, State, or Country" />
-		<div id="optionsList" class="menu">
+<div id="optionsList" class="menu">
 			<div id="born" class="menuItem"><span class="itemTitle" shortTitle="born ~">born about</span> <span class="hintType">(year)</span></div>
 			<div id="in" class="menuItem"><span class="itemTitle" shortTitle="in">lived in</span> <span class="hintType">(place)</span></div>
 
-			<!-- <div id="with" class="menuItem"><span class="itemTitle" shortTitle="with">with...</span> <span class="hintType">(person)</span></div> -->
+		<!-- <div id="with" class="menuItem"><span class="itemTitle" shortTitle="with">with...</span> <span class="hintType">(person)</span></div> -->
 			<!-- <div id="only" class="menuItem"><span class="itemTitle" shortTitle="only">limit results to...</span></div> -->
 		</div>
 		<div id="relationsList" class="menu">
@@ -106,11 +97,15 @@
 		-->
 
 		<!--  <div>Who are you looking for?</div> -->
+
 		<!-- <a href="#" id="trigger">Place caret at end</a>
 		<div><span class="data firstname">David </span><span class="data lastname">Menninger </span><span class="reserved livedin">lived in </span><span class="data livedin">Topeka, Kansas </span></div> -->
+
 		<!--  closing Dave's section -->
+
 	</section>
 	</div>
+
 	<!--  ancestry standards footer  -->
 	<div id="FooterRegion"></div>
 	<!--  ancestry standards scripts  -->
@@ -121,15 +116,14 @@
 		$(function() {
 			/* Header Footer */
 			AjaxManager.send({
-				url: 'http://navigation.ancestry.com/ajax/header/standard?loginUrl=a&logoutUrl=b&source=' + window.location.hostname + window.location.pathname
+				url: 'https://navigation.ancestry.com/ajax/header/standard?loginUrl=a&logoutUrl=b&source=' + window.location.hostname + window.location.pathname
 			});
 			AjaxManager.send({
-				url: 'http://footer.ajax.ancestry.com'
+				url: 'https://footer.ajax.ancestry.com'
 			});
 			/* Page Specific JS */
 
 		});
 	</script>
 </body>
-
 </html>
