@@ -18,7 +18,11 @@ padding: 50px;
   margin: 0 auto; */
 }
 
-.heading {
+.heading p {
+  width: 70%;
+  margin: 2em auto;
+
+
 }
 
 .search_box {
